@@ -13,6 +13,7 @@ public class gear {
 		DOWN, UP
 	}
 
+
 	boolean isDown = false;
 
 	public void setMotor(motorMode state) {
