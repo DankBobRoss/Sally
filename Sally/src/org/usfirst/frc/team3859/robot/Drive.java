@@ -25,6 +25,8 @@ public class Drive {
 			
 			Map.leftback.set(Map.leftfront.getDeviceID());
 			Map.rightback.set(Map.rightfront.getDeviceID());
+			
+			Map.leftfront.setInverted(true);
 
 		}
 

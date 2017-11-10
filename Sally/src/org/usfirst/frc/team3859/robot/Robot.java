@@ -15,8 +15,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 //		chooser.addDefault("Default Auto", defaultAuto);
 //		chooser.addObject("My Auto", customAuto);
-		CameraServer.getInstance().startAutomaticCapture(0);
-		CameraServer.getInstance().startAutomaticCapture(1);
+//		CameraServer.getInstance().startAutomaticCapture(0);
+//		CameraServer.getInstance().startAutomaticCapture(1);
 		SmartDashboard.putString("Auto Mode", "");
 		SmartDashboard.putBoolean("isDown", auto.OI.geary.isDown);
 	}

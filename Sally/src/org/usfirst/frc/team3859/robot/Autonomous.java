@@ -37,6 +37,7 @@ public class Autonomous {
 		if (order == order_) {
 			if (autoTimer.get() <= time) {
 				Map.leftfront.set(-speed);
+				OI.geary.setPos(gear.position.UP);
 				//to change the voltage for right. change the value below(the one after "-speed -"
 				Map.rightfront.set(-speed - .05);
 			} else {
@@ -184,9 +185,9 @@ public void autoSet() {
 		switch (autoMode) {
 		case "center":
 			//centerpeg
-		drive(1.6,.6,1);
-		nothing(.5,2);
-		gearScore(2,3);
+			drive(1.6,.6,1);
+			nothing(.5,2);
+			gearScore(2,3);
 			break;
 		case "cross":
 			//cross

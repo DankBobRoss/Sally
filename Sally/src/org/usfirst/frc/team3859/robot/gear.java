@@ -18,19 +18,16 @@ public class gear {
 	public void setMotor(motorMode state) {
 		switch (state) {
 		case SCORE:
-			Map.intake.set(-1);
-			Map.position.set(DoubleSolenoid.Value.kForward);
+			Map.intake.set(1);
 
 			break;
 		case INTAKE:
-			Map.intake.set(1);
-			Map.position.set(DoubleSolenoid.Value.kForward);
+			Map.intake.set(-1);
 
 			break;
 
 		case OFF:
 			Map.intake.set(0);
-			Map.position.set(DoubleSolenoid.Value.kReverse);
 			break;
 		}
 	}

@@ -6,7 +6,6 @@ public class io {
 	gear geary = new gear();
 	Drive driver = new Drive();
 	climb Climb = new climb();
-	private boolean init = false;
 
 	public void Enable() {
 
@@ -21,6 +20,12 @@ public class io {
 			geary.setMotor(gear.motorMode.SCORE);
 		} else {
 			geary.setMotor(gear.motorMode.OFF);
+		}
+		
+		if(Map.Xbox2.getBumper(Hand.kRight)) {
+			geary.setPos(gear.position.DOWN);
+		}else if(Map.Xbox2.getBumper(Hand.kLeft)){
+			geary.setPos(gear.position.UP);
 		}
 
 		// CLIMB
