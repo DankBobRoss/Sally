@@ -27,7 +27,7 @@ public class Autonomous {
 		if (init == false) {
 			if (order == 1.0) {
 				autoTimer.start();
-				order_ = 1;
+//				order_ = 1;
 			}
 			autoTimer.reset();
 			init = true;
@@ -39,7 +39,8 @@ public class Autonomous {
 				Map.leftfront.set(-speed);
 				OI.geary.setPos(gear.position.UP);
 				//to change the voltage for right. change the value below(the one after "-speed -"
-				Map.rightfront.set(-speed - .05);
+				Map.rightfront.set(-speed - 0);
+				Map.leftfront.set(-speed - .05);
 			} else {
 				Map.leftfront.set(0);
 				Map.rightfront.set(0);
@@ -60,7 +61,7 @@ public class Autonomous {
 		if (init == false) {
 			if (order == 1) {
 				autoTimer.start();
-				order_ = 1;
+//				order_ = 1;
 			}
 			autoTimer.reset();
 			init = true;
@@ -72,7 +73,7 @@ public class Autonomous {
 			} else if (autoTimer.get() >= time) {
 				OI.geary.setPos(gear.position.UP);
 				OI.geary.setMotor(gear.motorMode.OFF);
-				order_++;
+				order_++; 
 				init = false;
 				// SmartDashboard.putNumber("Auto Current Order", order);
 			}
@@ -148,7 +149,7 @@ public class Autonomous {
 		if (init == false) {
 			if (order == 1) {
 				autoTimer.start();
-				order_ = 1;
+//				order_ = 1;
 			}
 			autoTimer.reset();
 			init = true;
@@ -177,22 +178,28 @@ public class Autonomous {
  * 
  * @param autoMode
  */
-public void autoSet() {
+public void autoSet() { 
 	if (initiate == false) {
-		autoMode = SmartDashboard.getString("automode", "test");
+		OI.driver.SetUp();
+		
+		autoMode = SmartDashboard.getString("Auto Mode", "test");
 		initiate = true;
-	} else if (initiate == true) {
-		switch (autoMode) {
-		case "center":
-			//centerpeg
-			drive(1.6,.6,1);
-			nothing(.5,2);
-			gearScore(2,3);
-			break;
-		case "cross":
-			//cross
-			drive(3,.5,1);
-			break;
-		}
+		}else if (initiate == true) {
+	
+			switch (autoMode) {
+			case "center":
+				//centerpeg
+				drive(2,.25,1);
+				nothing(.5,2);
+				gearScore(3,3);
+				break;
+			case "cross":
+				//cross
+				drive(3,.3,1);
+				break; 
+			} 
+			if(order_>3) {
+				autoMode= "test";
+			}
 	}
 }}
