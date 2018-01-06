@@ -15,6 +15,10 @@ public class io {
 
 		// DRIVEEEEEEEEEE 
 		driver.Set(Drive.driveMode.DRIVE);
+		if(Map.Xbox1.getAButton()) {
+			Map.navx.reset();
+//			Map.newGyro.reset();
+		}
 
 		// GEAR STUFF
 			
@@ -24,6 +28,7 @@ public class io {
 			geary.setMotor(gear.motorMode.SCORE);
 		} else {
 			geary.setMotor(gear.motorMode.OFF);
+			
 		}
 		
 		// Each bumper pressed, sets the state 
@@ -39,7 +44,7 @@ public class io {
 		}else if(prev == PrevButton.L_BUMPER) {
 			geary.setPos(gear.position.UP);
 		}
-
+		
 		// CLIMB
 		Climb.Set(climb.climbMode.UP, Map.Xbox1.getTriggerAxis(Hand.kLeft));
 

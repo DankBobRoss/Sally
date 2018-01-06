@@ -1,8 +1,12 @@
  package org.usfirst.frc.team3859.robot;
-
+ import com.kauailabs.navx.frc.AHRS;
 import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.GyroBase;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
+import edu.wpi.first.wpilibj.AnalogGyro;
 
 public class Map {
 
@@ -27,4 +31,8 @@ public class Map {
 	//Xbox Controllers
 	static XboxController Xbox1 = new XboxController(0);
 	static XboxController Xbox2 = new XboxController(1);
+	
+	static AHRS navx = new AHRS(SPI.Port.kMXP);
+//	static Gyro newGyro = new Gyro(1);
+//	static AnalogGyro newGyro = new AnalogGyro(1);
 }
